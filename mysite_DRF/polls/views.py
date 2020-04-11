@@ -18,6 +18,7 @@ def index(request):
 def index_other(request):
     return HttpResponse("Hello, OTHER world. You're at the polls index.")
 
+
 class QuestionList(generics.ListCreateAPIView):
     queryset = Question.objects.all()
     serializer_class = QuestionSerializer
@@ -31,18 +32,18 @@ class QuestionDetail(generics.RetrieveUpdateDestroyAPIView):
         return obj
 
 
+class ChoiceList(generics.ListCreateAPIView):
+    queryset = Choice.objects.all()
+    serializer_class = ChoiceSerializer
 
-# class ChoiceList(generics.ListCreateAPIView):
-#     queryset = Choice.objects.all()
-#     serializer_class = ChoiceSerializer
-
-# class QuestionDetail(generics.RetrieveUpdateDestroyAPIView):
+class ChoiceDetail(generics.RetrieveUpdateDestroyAPIView):
     
-#     serializer_class = ChoiceSerializer
+    serializer_class = ChoiceSerializer
 
-#     def get_object(self):
-#         obj = get_object_or_404(Choice, pk=self.kwargs.get('question_id'))
-#         return obj
+    def get_object(self):
+        obj = get_object_or_404(Choice, pk=self.kwargs.get('choice_id'))
+
+        return obj
 
 
 
