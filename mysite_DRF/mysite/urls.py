@@ -20,4 +20,5 @@ urlpatterns = [
 	path('polls/', include('polls.urls')),
 	path('jet/', include('jet.urls', 'jet')),
     path('admin/', admin.site.urls),
+    path('api-auth/', include('rest_framework.urls')),
 ]
