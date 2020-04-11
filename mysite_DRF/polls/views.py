@@ -45,19 +45,3 @@ class ChoiceDetail(generics.RetrieveUpdateDestroyAPIView):
 
         return obj
 
-
-
-
-# def detail(request, question_id):
-# 	question = get_object_or_404(Question, pk=question_id)
-# 	return HttpResponse("You're looking at question: {}.".format(question))
-
-# def results(request, question_id):
-# 	question = get_object_or_404(Question, pk=question_id)
-# 	# print(dir(question))
-# 	# choices = Choice.objects.filter(question=question)
-# 	choises = question.choices.all()
-# 	output = ', '.join([str(c) for c in choises])
-# 	return HttpResponse(output)
-
-
